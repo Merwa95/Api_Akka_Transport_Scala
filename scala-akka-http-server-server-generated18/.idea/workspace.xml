@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a6902f51-5e09-4f1d-ad98-ed2819098172" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1XyxVEkRhkqO2ue8hQdHwlCsekH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="swagger-scala-akka-http-server" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="scala-akka-http-server-server-generated-18- [file:/home/manssar/Téléchargements/scala-akka-http-server-server-generated%20(18)/]" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="swagger-scala-akka-http-server-build" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/build.sbt" value="2264416417" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="1396028727" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/Sources/githab.com/udemy-akka-http" value="PREVIEW" />
+        <entry key="$USER_HOME$/Sources/github.com/Learning-Akka" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../doctors" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../scala-akka-http-server" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../scala-akka-http-server-server-generated (1)" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../scala-akka-http-server-server-generated (2)" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../scala-akka-http-server-server-generated (3)" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../scala-akka-http-server-server-generated (4)" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../scala-akka-http-server-server-generated (5)" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../scala-akka-http-server_Merwa_MANSSAR" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6902f51-5e09-4f1d-ad98-ed2819098172" name="Default Changelist" comment="" />
+      <created>1582032156529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582032156529</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="455" y="155" width="524" height="491" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1582040035497">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state x="455" y="155" width="524" height="491" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/70.27.1296.741@70.27.1296.741" timestamp="1582040035497" />
+  </component>
+</project>

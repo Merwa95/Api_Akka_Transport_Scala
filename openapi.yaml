@@ -1,0 +1,324 @@
+openapi: 3.0.1
+info:
+  title: YourSafety
+  description: Une API simple qui permet au voyageur d'avoir une idéé sur la densite
+  version: 1.0.0
+servers:
+- url: http://localhost:8080/api
+paths:
+  /stations/:
+    get:
+      tags:
+      - "Transport"
+      operationId: getStation
+      summary: Get all stations
+      responses:
+        '200':
+          description: ensemble des stations.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Station'
+##############################################################
+  /Station/ligne/{station}:
+    get:
+      tags:
+      - "Transport"
+      #parameters: []
+      operationId: getStationLignes
+      summary: Get all lines of station
+      parameters:
+      - name: station
+        in: path
+        schema:
+         type: string
+        required: true
+      responses:
+        '200':
+          description: A list of lines.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ligne'
+  /ligne/densite/{station}/{ligne}:
+    get:
+      tags:
+      - "Transport"
+      operationId: getLigneDensite
+      summary: Get a density
+      parameters: 
+      - name: station
+        in : path
+        schema:
+          type: string
+        required: true
+      - name: ligne
+        in : path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description:  a density of line 
+          content:
+            application/json:
+              schema:
+               type: string
+  /Ligne/Voyageur/{nomL}/{stationD}/{numeroID}:
+    post:
+      tags:
+      - "Transport"
+      operationId: ajoutVoyageurL
+      summary: enregistrer le numeroVoyageur et le nom de la ligne ==>stat
+      parameters:
+      - name: nomL
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: stationD
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: numeroID
+        in: path
+        schema:
+         type: integer
+        required: true
+      responses:
+        '200':
+          description: ajouter un tuple(nomligne,IDVoyaugeur,status).
+        '400':
+          description: erreur
+  /Ligne/Voyageur/{nomL}/{stationD}/{numerID}:
+    delete:
+      tags:
+      - "Transport"
+      operationId: supprimeVoyageurL
+      summary: supprimer voyageur== changer la valeur de lattribut statusVL
+      parameters:
+      - name: nomL
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: stationD
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: numerID
+        in: path
+        schema:
+         type: integer
+        required: true
+      responses:
+        '200':
+          description: modifier le tuple(nomligne,IDVoyaugeur,status).
+        '400':
+          description: erreur
+          ####Ajout de voyaguer#####
+  /lignes/trains/{ligne}:
+    get:
+      tags:
+      - "Transport"
+      operationId: getTrains
+      summary: Get all trains
+      parameters: 
+      - name: ligne
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: A list of trains
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Train'
+  /lignes/trains/densite/{ligne}/{train}:
+    get:
+      tags:
+      - "Transport"
+      operationId: getTrainsDensite
+      summary: Get a density
+      parameters: 
+      - name: ligne
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: train
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: A density
+          content:
+            application/json:
+              schema:
+               type: string
+  /Ligne/Train/Voyageur/{nomT}/{nomL}/{statusVT}/{numeroID}:
+    post:
+      tags:
+      - "Transport"
+      operationId: ajoutVoyageurT
+      summary: ajoutVoyaguerTrain
+      parameters:
+      - name: nomT
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: nomL
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: statusVT
+        in: path
+        schema:
+         type: boolean
+        required: true
+      - name: numeroID
+        in: path
+        schema:
+         type: integer
+        required: true
+      responses:
+        '200':
+          description: ajouter un tuple(nomTrain,IDVoyaugeur,status).
+        '400':
+          description: erreur
+  /LigneTrain//Voyageur/{nomT}/{nomL}/{numeroID}:
+    delete:
+      tags:
+      - "Transport"
+      operationId: supprimeVoyageurTrain
+      summary: supprimer voyageur== changer la valeur de lattribut statusVT
+      parameters:
+      - name: nomT
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: nomL
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: numeroID
+        in: path
+        schema:
+         type: integer
+        required: true
+      responses:
+        '200':
+          description: supprimer voyageur== changer la valeur de lattribut statusVL.
+        '400':
+          description: erreur
+
+###choisi ce train
+
+components:
+  schemas:
+  
+    Station:
+      required: 
+      - id
+      - status
+      - reseau
+      type: object
+      properties:
+        id:
+         type: string
+        status:
+         type: boolean
+        reseau:
+         type: string
+    Ligne:
+      required: 
+      - id
+      - status
+      - capacity
+      - stationD 
+      - stationA
+      type: object
+      properties:
+        id:
+         type: string
+        status:
+         type: boolean
+        capacity:
+         type: integer
+        stationD:
+         type: string
+        stationA:
+         type: string
+    Train:
+      required: 
+      - id
+      - status
+      - capacity
+      - ligne
+      type: object
+      properties:
+        id:
+         type: string
+        status:
+         type: boolean
+        capacity:
+         type: integer
+        ligne:
+         type: string
+    Voyageur:
+      required: 
+      - nom
+      - status
+      type: object
+      properties:
+        id:
+         type: integer
+        nom:
+         type: string
+        status:
+         type: boolean
+
+    LigneVoyaguer:
+      type: object
+      properties:
+        ligne:
+         type: string
+        statusVL:
+         type: boolean
+        voyageur:
+         type: integer
+        densite:
+         $ref: '#/components/schemas/Densite'
+    TrainVoyaguer:
+      type: object
+      properties:
+       Train:
+         type: string
+       statusVT:
+         type: boolean
+       voyageur:
+         type: integer
+       densite:
+          $ref: '#/components/schemas/Densite'
+    Densite:
+      type: string
+      enum:
+        - danger!!!
+        - noDanger:)
+        - someDanger!
